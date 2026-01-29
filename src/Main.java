@@ -1,15 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+            System.out.println("1-Cadastrar User.");
+            System.out.println("2-Sair.");
+
+
+        ArrayList<String> NomesIdades = new ArrayList<>();
+        System.out.println("Digite seu nome: ");
+        Scanner sc = new Scanner(System.in);
+        NomesIdades.add(sc.nextLine());
+
+       nomes(NomesIdades);
+    }
+    public static void nomes(ArrayList<String> NomesIdades){
+        System.out.println("Lista de nonmes:");
+        for (String nome : NomesIdades){
+            System.out.println(nome);
         }
     }
 }
