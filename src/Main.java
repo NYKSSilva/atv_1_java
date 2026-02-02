@@ -19,30 +19,40 @@ public class Main {
             int escolha = opcoes.nextInt();
             System.out.println();
 
-            if (escolha == 1){
+            if (escolha == 1){ //Cadastrar
                 System.out.println("Digite o nome que deseja cadastrar!!");
                 Scanner sc = new Scanner(System.in);
                 String userName = sc.nextLine();
                 nomes.add(userName);
             }
-            else if (escolha ==2){
+            else if (escolha ==2){ //Listar
                 listar();
                 System.out.println();
             }
-            else if(escolha ==3){
+            else if(escolha ==3){ //atualizar
                 listar();
-                System.out.println("Digite o numero do aluno que deseja Atualizar:");
+                System.out.println("Digite o numero do aluno que deseja Atualizar: ");
                 Scanner id = new Scanner(System.in);
+                int user = id.nextInt();
+                nomes.remove(user);
+                System.out.println("Digite o nome atualizado: ");
+                Scanner atualizado = new Scanner(System.in);
+                String nome = atualizado.nextLine();
+                nomes.add(nome);
+                System.out.println("Nome atualizado:" + nome);
+                System.out.println();
+
             }
 
-            else if(escolha ==4){
+            else if(escolha ==4){ // Excluir
                 listar();
                 System.out.println("Digite o numero do aluno que deseja Remover:");
                 Scanner id = new Scanner(System.in);
-                nomes.remove(id);
+                int user = id.nextInt();
+                nomes.remove(user);
             }
 
-            else if(escolha ==0){
+            else if(escolha ==0){ // sair
                 break;
             }
 
@@ -51,16 +61,6 @@ public class Main {
             }
         }
 
-//        public static void exibir(){
-//            if(lista.size() == 0){
-//                System.out.println("Parece que não há alunos registrados.");
-//            }
-//            else{
-//                System.out.println("Exibindo alunos... ");
-//                for (int i = 0; i < lista.size(); i++) {
-//                    System.out.println(i + " - " + lista.get(i)); // Usei IA para fazer o for
-//                }
-//                }
     }
 
     public static void listar(){
