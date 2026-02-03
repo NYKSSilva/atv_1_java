@@ -27,25 +27,36 @@ public class Main {
             }
             else if (escolha ==2){ //Listar
                 listar();
+                if (nomes.size()<1){
+                    System.out.println("Lista vazia!");
+                }
                 System.out.println();
             }
             else if(escolha ==3){ //atualizar
                 listar();
-                System.out.println("Digite o numero do aluno que deseja Atualizar: ");
-                Scanner id = new Scanner(System.in);
-                int user = id.nextInt();
-                nomes.remove(user);
-                System.out.println("Digite o nome atualizado: ");
-                Scanner atualizado = new Scanner(System.in);
-                String nome = atualizado.nextLine();
-                nomes.add(nome);
-                System.out.println("Nome atualizado:" + nome);
-                System.out.println();
+                if (nomes.size()>1) {
+                    System.out.println("Digite o numero do aluno que deseja Atualizar: ");
+                    Scanner id = new Scanner(System.in);
+                    int user = id.nextInt();
+                    nomes.remove(user);
+                    System.out.println("Digite o nome atualizado: ");
+                    Scanner atualizado = new Scanner(System.in);
+                    String nome = atualizado.nextLine();
+                    nomes.add(nome);
+                    System.out.println("Nome atualizado:" + nome);
+                    System.out.println();
+                }
+                else {
+                    System.out.println("Lista vazia, nenhum cadastro para atualizar.");
+                }
 
             }
 
             else if(escolha ==4){ // Excluir
                 listar();
+                if (nomes.size()<1) {
+                    System.out.println("Lista Vazia");
+                }
                 System.out.println("Digite o numero do aluno que deseja Remover:");
                 Scanner id = new Scanner(System.in);
                 int user = id.nextInt();
